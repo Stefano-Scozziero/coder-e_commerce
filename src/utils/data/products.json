@@ -1,0 +1,380 @@
+[
+    
+    {
+    "id": 1,
+    "title": "Dulce de leche granizado",
+    "description": "Es dulce de leche con trocitos de chocolate.",
+    "price": 400,
+    "discountPercentage": 12.96,
+    "rating": 4.69,
+    "stock": 94,
+    "brand": "Giandia",
+    "category": "Helados",
+    "thumbnail": "https://elcordillerano1.cdn.net.ar/252/elcordillerano/images/01/58/39/1583939_d3faad334093b77e5d81dd075c283bf2a6c2ee48f24651f92c699a7dff744971/xs.webp",
+    "images": [
+      "https://elcordillerano1.cdn.net.ar/252/elcordillerano/images/01/58/39/1583939_d3faad334093b77e5d81dd075c283bf2a6c2ee48f24651f92c699a7dff744971/xs.webp"
+    ]
+    },
+    {
+    "id": 2,
+    "title": "Dulce de leche con brownies",
+    "description": "Combina el dulce de leche con pedazos de brownie de chocolate.",
+    "price": 400,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://elpolohelados.com.ar/wp-content/uploads/2014/01/Dulcedelechebrownie.jpg",
+    "images": [
+      "https://elpolohelados.com.ar/wp-content/uploads/2014/01/Dulcedelechebrownie.jpg"
+    ]
+    },
+    {
+    "id": 3,
+    "title": "Sambayón",
+    "description": "Un sabor italiano, hecho con yemas de huevo, azúcar y vino Marsala, que tiene un sabor dulce y alcohólico.",
+    "price": 400,
+    "discountPercentage": 15.46,
+    "rating": 4.09,
+    "stock": 36,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://static.solopostres.com/uploads/2016/04/receta424.jpg",
+    "images": [
+      "https://static.solopostres.com/uploads/2016/04/receta424.jpg"
+    ]
+    },
+    {
+    "id": 4,
+    "title": "Frutilla a la crema",
+    "description": "Es un helado de crema con sabor a frutillas.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://acdn.mitiendanube.com/stores/001/292/222/products/frutilla-a-la-crema1-ec1cbf330d363ca7ad16008826084592-640-0.jpg",
+    "images": [
+      "https://acdn.mitiendanube.com/stores/001/292/222/products/frutilla-a-la-crema1-ec1cbf330d363ca7ad16008826084592-640-0.jpg"
+    ]
+    },
+    {
+    "id": 5,
+    "title": "Chocolate amargo",
+    "description": "Un sabor intenso y rico, ideal para los amantes del chocolate.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://www.heladeria.com/files/uploads/images/Articulos/2017/ah175/comparativa-mantecado-cacao.jpg",
+    "images": [
+      "https://www.heladeria.com/files/uploads/images/Articulos/2017/ah175/comparativa-mantecado-cacao.jpg"
+    ]
+    },
+    {
+    "id": 6,
+    "title": "Dulce De Leche",
+    "description": "Un sabor clásico argentino, hecho con leche, azúcar y vainilla, que tiene un sabor dulce y cremoso.",
+    "price": 400,
+    "discountPercentage": 16,
+    "rating": 4.74,
+    "stock": 133,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://assets.elgourmet.com/wp-content/uploads/2023/03/helad_PfzL0wqTRnZyNObMleAvpmFYVSHdj6.png",
+    "images": [
+      "https://assets.elgourmet.com/wp-content/uploads/2023/03/helad_PfzL0wqTRnZyNObMleAvpmFYVSHdj6.png"
+    ]
+    },
+    {
+    "id": 7,
+    "title": "Crema americana",
+    "description": "Un sabor de vainilla muy popular.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://img-global.cpcdn.com/recipes/f086a71bf2c295cc/1200x630cq70/photo.jpg",
+    "images": [
+      "https://img-global.cpcdn.com/recipes/f086a71bf2c295cc/1200x630cq70/photo.jpg"
+    ]
+    },
+    {
+    "id": 8,
+    "title": "Tramontana",
+    "description": "Es un helado de vainilla con dulce de leche y galletitas.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://acdn.mitiendanube.com/stores/001/292/222/products/tramontana-2-9780983947a2117db416631780191097-1024-1024.jpg",
+    "images": [
+      "https://acdn.mitiendanube.com/stores/001/292/222/products/tramontana-2-9780983947a2117db416631780191097-1024-1024.jpg"
+    ]
+    },
+    {
+    "id": 9,
+    "title": "Menta granizada",
+    "description": "Un helado de menta con trocitos de chocolate.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://pbs.twimg.com/media/EWVQn4yXkAEuz2C.jpg:large",
+    "images": [
+      "https://pbs.twimg.com/media/EWVQn4yXkAEuz2C.jpg:large"
+    ]
+    },
+    {
+    "id": 10,
+    "title": "Limón",
+    "description": "Un helado de agua con sabor a limón, muy refrescante.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://imag.bonviveur.com/helado-de-limon-casero-y-facil.jpg",
+    "images": [
+      "https://imag.bonviveur.com/helado-de-limon-casero-y-facil.jpg"
+    ]
+    },
+    {
+    "id": 11,
+    "title": "Mascarpone",
+    "description": "Un sabor italiano, hecho con queso mascarpone, que tiene un sabor suave y cremoso.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://i.blogs.es/cebe01/helado-queso-mascarpone-y-frutos-rojos-1-/450_1000.jpg",
+    "images": [
+      "https://i.blogs.es/cebe01/helado-queso-mascarpone-y-frutos-rojos-1-/450_1000.jpg"
+    ]
+    },
+    {
+    "id": 12,
+    "title": "Malbec con frutos rojos",
+    "description": "Un sabor de helado de vino Malbec con frutos rojos.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://img-global.cpcdn.com/recipes/f02dbc720a87c073/1200x630cq70/photo.jpg",
+    "images": [
+      "https://img-global.cpcdn.com/recipes/f02dbc720a87c073/1200x630cq70/photo.jpg"
+    ]
+    },
+    {
+    "id": 13,
+    "title": "Tiramisú",
+    "description": "Un sabor italiano, que imita el postre del mismo nombre, con sabor a café, queso mascarpone y bizcochos.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://www.clarin.com/img/2020/12/15/ubsxxuW1r_1256x620__2.jpg",
+    "images": [
+      "https://www.clarin.com/img/2020/12/15/ubsxxuW1r_1256x620__2.jpg"
+    ]
+    },
+    {
+    "id": 14,
+    "title": "Quinotos al whisky",
+    "description": " Un sabor único que combina quinotos (un tipo de cítrico) con whisky.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://resizer.glanacion.com/resizer/v2/malag-RT2WXPQOGJGCFCQWPER2NZO2AQ.jpg?auth=134d0625d31c75142d22b6074d9de120eb9884a2af7a36a835d3c64cf1eff3e5&width=420&height=279&quality=70&smart=true",
+    "images": [
+      "https://resizer.glanacion.com/resizer/v2/malag-RT2WXPQOGJGCFCQWPER2NZO2AQ.jpg?auth=134d0625d31c75142d22b6074d9de120eb9884a2af7a36a835d3c64cf1eff3e5&width=420&height=279&quality=70&smart=true"
+    ]
+    },
+    {
+    "id": 15,
+    "title": "Maracuyá",
+    "description": "Un helado de agua con sabor a maracuyá, muy refrescante.",
+    "price": 400,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Helados",
+    "thumbnail": "https://gastronomiafeliz.com/wp-content/uploads/2022/05/14-1-2-1080x650.jpg",
+    "images": [
+      "https://gastronomiafeliz.com/wp-content/uploads/2022/05/14-1-2-1080x650.jpg"
+    ]
+    },
+    {
+    "id": 16,
+    "title": "Torta Helada Oreo",
+    "description": "Una Torta helada con galletitas Oreo y capas de crema chantilly",
+    "price": 1000,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Postres",
+    "thumbnail": "https://www.lanacion.com.ar/resizer/v2/torta-HB4RI5VI3ZHRNPIEZGN3MM3LME.png?auth=0b0329a1dc91105d6e45458a9fff828231da8018489bd4d922f4e117e68fd567&width=420&height=280&quality=70&smart=true",
+    "images": [
+      "https://www.lanacion.com.ar/resizer/v2/torta-HB4RI5VI3ZHRNPIEZGN3MM3LME.png?auth=0b0329a1dc91105d6e45458a9fff828231da8018489bd4d922f4e117e68fd567&width=420&height=280&quality=70&smart=true"
+    ]
+    },
+    {
+    "id": 17,
+    "title": "Chocotorta",
+    "description": "Un postre tradicional argentino con mucho dulce de leche y galletitas chocolinas.",
+    "price": 1000,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Postres",
+    "thumbnail": "https://www.cronista.com/files/image/468/468611/62c8901ff0951.jpg",
+    "images": [
+      "https://www.cronista.com/files/image/468/468611/62c8901ff0951.jpg"
+    ]
+    },
+    {
+    "id": 18,
+    "title": "Cheesecake",
+    "description": "Un postre hecho a base de queso con una lluvia de frutos rojos por encima.",
+    "price": 1300,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Postres",
+    "thumbnail": "https://img-global.cpcdn.com/recipes/62a3eed0b2f8d287/1200x630cq70/photo.jpg",
+    "images": [
+      "https://img-global.cpcdn.com/recipes/62a3eed0b2f8d287/1200x630cq70/photo.jpg"
+    ]
+    },
+    {
+    "id": 19,
+    "title": "Tiramisú",
+    "description": "Un Postre hecho a base de vainillas y crema, con dulce de leche y cacao espolvoreado.",
+    "price": 1200,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Postres",
+    "thumbnail": "https://www.eltiempo.com/files/image_1200_680/uploads/2023/03/24/641e38beecfdb.jpeg",
+    "images": [
+      "https://www.eltiempo.com/files/image_1200_680/uploads/2023/03/24/641e38beecfdb.jpeg"
+    ]
+    },
+    {
+    "id": 20,
+    "title": "Paleta Dulce de Leche",
+    "description": "Esta paleta tiene un sabor dulce y cremoso, y es muy popular en Argentina. Está hecha con leche, azúcar y vainilla.",
+    "price": 200,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Paletas",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE47Jo4O1TdceSt90JlYUxMBDnqwdu27Hhdw&usqp=CAU",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE47Jo4O1TdceSt90JlYUxMBDnqwdu27Hhdw&usqp=CAU"
+    ]
+    },
+    {
+    "id": 21,
+    "title": "Paleta Menta Granizada",
+    "description": "Esta paleta tiene un sabor dulce, cremoso y refrescante",
+    "price": 200,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Paletas",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRk_LC6rKlYjvCugq4hTOVQyPxfMVN0pdEkg&usqp=CAU",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRk_LC6rKlYjvCugq4hTOVQyPxfMVN0pdEkg&usqp=CAU"
+    ]
+    },
+    {
+    "id": 22,
+    "title": "Paleta Dulce de Leche Chocolate",
+    "description": "Esta paleta tiene un sabor dulce y cremoso, y es muy popular en Argentina. Está hecha con leche, azúcar y vainilla. Y cubierta de chocolate",
+    "price": 200,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Paletas",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9UvNQFfjO8t-SaFzjxtB87HR00TIyUKAk4A&usqp=CAU",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9UvNQFfjO8t-SaFzjxtB87HR00TIyUKAk4A&usqp=CAU"
+    ]
+    },
+    {
+    "id": 23,
+    "title": "Paleta de Oreo",
+    "description": "Esta paleta tiene un sabor dulce y cremoso, hecha con galletitas oreo y crema de vainilla",
+    "price": 200,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Paletas",
+    "thumbnail": "https://i.blogs.es/319c65/como-hacer-paletas-de-galleta-oreo-2-/1366_2000.jpg",
+    "images": [
+      "https://i.blogs.es/319c65/como-hacer-paletas-de-galleta-oreo-2-/1366_2000.jpg"
+    ]
+    },
+    {
+    "id": 24,
+    "title": "Vasitos",
+    "description": "Estos vasitos estan hechos con una pasta vegana",
+    "price": 10,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Adicionales",
+    "thumbnail": "https://lh3.googleusercontent.com/proxy/ASaR6TT7q-J3Vn0mqY10j8txSDkg3ffnCSOSF0OjwJ0Q7xI5DWgKKRub5CE8qqxYrGYCCLXuNxsyMLsVjmqsGOeH42SWPbiu6akxLUal3muz65dn4Oyc4mzIlbjeqA",
+    "images": [
+      "https://lh3.googleusercontent.com/proxy/ASaR6TT7q-J3Vn0mqY10j8txSDkg3ffnCSOSF0OjwJ0Q7xI5DWgKKRub5CE8qqxYrGYCCLXuNxsyMLsVjmqsGOeH42SWPbiu6akxLUal3muz65dn4Oyc4mzIlbjeqA"
+    ]
+    },
+    {
+    "id": 25,
+    "title": "Cucuruchos",
+    "description": "El cucurucho no es solo un contenedor para el helado, sino que también aporta textura y sabor a la cremosidad del helado",
+    "price": 50,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Adicionales",
+    "thumbnail": "https://acdn.mitiendanube.com/stores/001/789/620/products/cono-dulce-30-35-401-de0de9970524af34e116431137111918-640-0.jpg",
+    "images": [
+      "https://acdn.mitiendanube.com/stores/001/789/620/products/cono-dulce-30-35-401-de0de9970524af34e116431137111918-640-0.jpg"
+    ]
+    }
+    
+]
+

@@ -1,20 +1,68 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, StatusBar, SafeAreaView, Platform, useWindowDimensions } from 'react-native'
+import Home from './src/screens/Home'
+import ProductDetail from './src/screens/ProductDetail'
+import ProductsByCategory from './src/screens/ProductsByCategory'
+import { useEffect, useState } from 'react'
+import { useFonts } from 'expo-font'
+import { fontsCollections } from './src/utils/globals/fonts'
 
-export default function App() {
+
+
+const App = () => {
+
+  const [fontsLoaded] = useFonts(fontsCollections)
+  const [categorySelected, setCategorySelected] = useState("")
+  const [productId, setProductId] = useState(0)
+  const {width, height} = useWindowDimensions()
+  const [portrait, setPortrait] = useState(true)
+
+  useEffect(()=> {
+    if (width > height) setPortrait(false) 
+    else setPortrait(true)
+  }, [width, height])
+
+  if(!fontsLoaded) return null
+
+  const selectedCategoryState = (category) => {
+    setCategorySelected(category)
+  }
+
+  const selectedProductId = (id) => {
+    setProductId(id)
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      <StatusBar/>
+      <SafeAreaView style={styles.container}>
+        {categorySelected ?
+          productId ?
+            <ProductDetail
+              productId = {productId}
+              portrait= {portrait}
+            />
+            :
+            <ProductsByCategory 
+              selectedProductId= {selectedProductId}
+              categorySelected={categorySelected}
+            /> 
+          : 
+          <Home 
+            selectedCategoryState={selectedCategoryState}
+          />
+        }
+      </SafeAreaView>
+    </>
+    
+      
+    
+  )
 }
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    flex: 1
+  }
+})
