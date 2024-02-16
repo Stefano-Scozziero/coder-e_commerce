@@ -1,14 +1,12 @@
 import { FlatList, StyleSheet } from 'react-native'
 import products from '../utils/data/products.json'
-import Header from '../components/Header'
 import { useEffect, useState } from 'react'
 import ProductByCategory from '../components/ProductByCategory'
 import Search from '../components/Search'
 
-const ProductsByCategory = ({categorySelected, selectedProductId}) => {
-
+const ProductsByCategory = ({route, navigation}) => {
+  const {categorySelected} = route.params
   const [productsFiltered, setProductsFiltered] = useState([])
-
   const [keyWord, setKeyWord] = useState("")
 
   const handlerKeyWord = (k) => {
@@ -28,12 +26,11 @@ const ProductsByCategory = ({categorySelected, selectedProductId}) => {
 
   return (
     <>
-      <Header title= {categorySelected || "Productos"}/>
       <Search handlerKeyWord={handlerKeyWord}/>
       <FlatList
         data={productsFiltered}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <ProductByCategory selectedProductId= {selectedProductId} item={item}/>}
+        renderItem={({item}) => <ProductByCategory navigation={navigation} item={item}/>}
       
       />
     </>

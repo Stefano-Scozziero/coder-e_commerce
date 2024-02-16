@@ -1,5 +1,20 @@
 [
-    
+  
+    {
+    "id": 0,
+    "title": "Cucuruchos",
+    "description": "El cucurucho no es solo un contenedor para el helado, sino que también aporta textura y sabor a la cremosidad del helado",
+    "price": 50,
+    "discountPercentage": 17.91,
+    "rating": 4.3,
+    "stock": 123,
+    "brand": "Gianduia",
+    "category": "Adicionales",
+    "thumbnail": "https://acdn.mitiendanube.com/stores/001/789/620/products/cono-dulce-30-35-401-de0de9970524af34e116431137111918-640-0.jpg",
+    "images": [
+      "https://acdn.mitiendanube.com/stores/001/789/620/products/cono-dulce-30-35-401-de0de9970524af34e116431137111918-640-0.jpg"
+    ]
+    },
     {
     "id": 1,
     "title": "Dulce de leche granizado",
@@ -358,21 +373,6 @@
     "thumbnail": "https://lh3.googleusercontent.com/proxy/ASaR6TT7q-J3Vn0mqY10j8txSDkg3ffnCSOSF0OjwJ0Q7xI5DWgKKRub5CE8qqxYrGYCCLXuNxsyMLsVjmqsGOeH42SWPbiu6akxLUal3muz65dn4Oyc4mzIlbjeqA",
     "images": [
       "https://lh3.googleusercontent.com/proxy/ASaR6TT7q-J3Vn0mqY10j8txSDkg3ffnCSOSF0OjwJ0Q7xI5DWgKKRub5CE8qqxYrGYCCLXuNxsyMLsVjmqsGOeH42SWPbiu6akxLUal3muz65dn4Oyc4mzIlbjeqA"
-    ]
-    },
-    {
-    "id": 25,
-    "title": "Cucuruchos",
-    "description": "El cucurucho no es solo un contenedor para el helado, sino que también aporta textura y sabor a la cremosidad del helado",
-    "price": 50,
-    "discountPercentage": 17.91,
-    "rating": 4.3,
-    "stock": 123,
-    "brand": "Gianduia",
-    "category": "Adicionales",
-    "thumbnail": "https://acdn.mitiendanube.com/stores/001/789/620/products/cono-dulce-30-35-401-de0de9970524af34e116431137111918-640-0.jpg",
-    "images": [
-      "https://acdn.mitiendanube.com/stores/001/789/620/products/cono-dulce-30-35-401-de0de9970524af34e116431137111918-640-0.jpg"
     ]
     }
     
