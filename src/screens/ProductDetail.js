@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import products from '../utils/data/products.json'
-import { useEffect, useState } from 'react'
-import Header from '../components/Header'
+import { useEffect, useState, useContext } from 'react'
 import colors from '../utils/globals/colors'
+import { OrientationContext } from '../utils/globals/context';
 
 const ProductDetail = ({route}) => {
   const {productId} = route.params
   const [product, setProduct] = useState({})
+  const portrait = useContext(OrientationContext);
 
   useEffect(()=> {
     const productFinded = products.find(product => product.id === productId)
@@ -14,17 +15,17 @@ const ProductDetail = ({route}) => {
   }, [productId])
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
+      <View style={[styles.content, !portrait && styles.contentLandscape]}>
         <Image
-          style= {styles.image}
+          style= {[styles.image, !portrait && styles.imageLandScape]}
           source= {{uri:product?.images ? product.images[0] : null}}
           resizeMode= 'contain'
         />
-        <View style={styles.containerText}>
+        <View style={[styles.containerText, !portrait && styles.containerTextLandscape]}>
           <Text style={styles.title}>{product.title}</Text>
           <Text>{product.description}</Text>
         </View>
-        <View style={styles.containerPrice}>
+        <View style={[styles.containerPrice, !portrait && styles.containerPriceLandscape]}>
           <Text style={styles.price}>$ {product.price}</Text>
           <Pressable style={styles.buyNow}>
             <Text style={styles.buyNowText}>Comprar Ahora</Text>

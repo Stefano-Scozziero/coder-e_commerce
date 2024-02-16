@@ -6,9 +6,12 @@ const Header = ({title= "Ecommerce", navigation}) => {
   return <View style={styles.container}>
           {navigation.canGoBack() &&
           <Pressable style={styles.goBack} onPress={() => navigation.goBack()}>
-            <AntDesign name='arrowleft' size={25} color="black"/>
+            <AntDesign name='arrowleft' size={30} color="black"/>
           </Pressable>}
           <Text style={styles.text}>{title}</Text>
+          <Pressable style={styles.goCart} onPress={() => navigation.goBack()}>
+            <AntDesign name='shoppingcart' size={30} color="black"/>
+          </Pressable>
          </View>
   
 }
@@ -19,7 +22,8 @@ const styles = StyleSheet.create({
 
     container:{
       backgroundColor: colors.primary,
-      height: 80,
+      height: 90,
+      paddingTop:30,
       width: '100%',
       justifyContent: 'center',
       alignItems: 'center',
@@ -31,8 +35,14 @@ const styles = StyleSheet.create({
     },
     goBack: {
       position: 'absolute',
-      left: 10,
-      bottom: 25
+      left: 15,
+      bottom: 13
+
+    },
+    goCart: {
+      position: 'absolute',
+      right: 30,
+      bottom: 13
 
     }
 })
