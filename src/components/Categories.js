@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, StyleSheet} from 'react-native'
 import categories from '../utils/data/categories.json'
 import CardCategories from './CardCategories'
 
@@ -14,5 +14,3 @@ const Categories = ({navigation}) => {
 }
 
 export default Categories
-
-const styles = StyleSheet.create({})

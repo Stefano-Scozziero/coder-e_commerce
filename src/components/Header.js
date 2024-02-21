@@ -9,7 +9,7 @@ const Header = ({title= "Ecommerce", navigation}) => {
             <AntDesign name='arrowleft' size={30} color="black"/>
           </Pressable>}
           <Text style={styles.text}>{title}</Text>
-          <Pressable style={styles.goCart} onPress={() => navigation.goBack()}>
+          <Pressable style={styles.goCart} onPress={() => navigation.navigate("ShoppingCart")}>
             <AntDesign name='shoppingcart' size={30} color="black"/>
           </Pressable>
          </View>
