@@ -16,7 +16,7 @@ const CounterCart = ({item}) => {
     <View style={styles.counterContainer}>
         <Button title='+' onPress={()=> dispatch(addCartItem({...item,quantity:1})) }/>
         <Text style={styles.text}>{item.quantity}</Text>
-        <Button title='-'  onPress={ handlerDecrement }/>   
+        <Button title='-'  onPress={handlerDecrement}/>   
     </View>
   )
 }
