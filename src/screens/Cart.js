@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,FlatList,Pressable } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Pressable } from 'react-native'
 import CartItem from '../components/CartItem'
 import cart from '../utils/data/cart.json'
 import fonts from '../utils/globals/fonts'
@@ -7,6 +7,7 @@ import colors from '../utils/globals/colors'
 const Cart = () => {
   return (
     <View style={styles.container}>
+        
         <FlatList
         data={cart.items}
         keyExtractor={(item)=>item.id}

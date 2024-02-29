@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Platform, StatusBar, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import colors from '../utils/globals/colors'
 import {AntDesign} from '@expo/vector-icons'
 
@@ -9,9 +9,7 @@ const Header = ({title= "Ecommerce", navigation}) => {
             <AntDesign name='arrowleft' size={30} color="black"/>
           </Pressable>}
           <Text style={styles.text}>{title}</Text>
-          <Pressable style={styles.goCart} onPress={() => navigation.navigate("ShoppingCart")}>
-            <AntDesign name='shoppingcart' size={30} color="black"/>
-          </Pressable>
+          
          </View>
   
 }
@@ -36,12 +34,6 @@ const styles = StyleSheet.create({
     goBack: {
       position: 'absolute',
       left: 15,
-      bottom: 13
-
-    },
-    goCart: {
-      position: 'absolute',
-      right: 30,
       bottom: 13
 
     }

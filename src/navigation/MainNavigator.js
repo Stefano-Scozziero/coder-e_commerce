@@ -1,5 +1,5 @@
 
-import { StyleSheet,View,Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ShopStack from './ShopStack'
@@ -10,26 +10,25 @@ import TabBarIcon from '../components/TapBarIcon';
 
 const Tab = createBottomTabNavigator();
 
-const MainNavigator = () => {
+const MainNavigator = ({portrait}) => {
 
   return (
-    <NavigationContainer>
+    <NavigationContainer portrait= {portrait}>
         <Tab.Navigator
                 initialRouteName='ShopStack'
                 screenOptions={{
                     headerShown:false,
                     tabBarShowLabel:false,
-                    tabBarStyle: styles.tabBar
-
+                    tabBarStyle: [styles.tabBar, !portrait && styles.tabBarLandScape]
 
                 }}
            >
-                <Tab.Screen 
+                <Tab.Screen
                 name='ShopStack'
                 component={ShopStack}
                 options={{
                     tabBarIcon: ({focused}) => 
-                    <TabBarIcon title="Productos" nameIcon="home" focused={focused}/>
+                    <TabBarIcon title="Productos" nameIcon="home" focused={focused} portrait={portrait}/>
                 }}
                 />
                 <Tab.Screen 
@@ -37,7 +36,7 @@ const MainNavigator = () => {
                     component={CartStack}
                     options={{
                         tabBarIcon: ({focused}) => 
-                        <TabBarIcon title="Carrito" nameIcon="shopping-cart" focused={focused}/>
+                        <TabBarIcon title="Carrito" nameIcon="shopping-cart" focused={focused} portrait={portrait}/>
                     }}
 
                 />
@@ -45,7 +44,7 @@ const MainNavigator = () => {
                     name='OrdersStack' 
                     component={OrdersStack}
                     options={{
-                        tabBarIcon: ({focused}) => <TabBarIcon title="Ordenes" nameIcon="list" focused={focused}/>
+                        tabBarIcon: ({focused}) => <TabBarIcon title="Ordenes" nameIcon="list" focused={focused} portrait={portrait}/>
                     }}
                     />
            </Tab.Navigator>
@@ -73,5 +72,23 @@ const styles = StyleSheet.create({
       },
       shadowOpacity: 0.23,
       shadowRadius: 2.62, 
-  }
+  },
+  tabBarLandScape:{
+    backgroundColor:colors.primary,
+    height:80,
+    position:"absolute",
+    left:40,
+    right:40,
+    bottom:25,
+    borderRadius:15,
+    elevation:4,
+    /*Shadow IOS*/
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62, 
+}
 })
