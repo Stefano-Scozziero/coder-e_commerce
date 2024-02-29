@@ -1,18 +1,21 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import products from '../utils/data/products.json'
 import { useEffect, useState, useContext } from 'react'
 import colors from '../utils/globals/colors'
 import { OrientationContext } from '../utils/globals/context';
+import Counter from '../components/Counter';
 
 const ProductDetail = ({route}) => {
   const {productId} = route.params
   const [product, setProduct] = useState({})
+  
   const portrait = useContext(OrientationContext);
 
   useEffect(()=> {
     const productFinded = products.find(product => product.id === productId)
     setProduct(productFinded)
   }, [productId])
+
   return (
     <View style={styles.container}>
       <View style={[styles.content, !portrait && styles.contentLandscape]}>
@@ -27,9 +30,11 @@ const ProductDetail = ({route}) => {
         </View>
         <View style={[styles.containerPrice, !portrait && styles.containerPriceLandscape]}>
           <Text style={styles.price}>$ {product.price}</Text>
-          <Pressable style={styles.buyNow}>
-            <Text style={styles.buyNowText}>Comprar Ahora</Text>
-          </Pressable>
+          <Counter 
+            initialValue={1} 
+            product={product} 
+            textButton="Carrito"/>
+
         </View>
       </View>
     </View>
