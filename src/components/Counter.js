@@ -1,7 +1,8 @@
-import { StyleSheet, View, Button,Text } from 'react-native'
+import { StyleSheet, View, Button,Text, Pressable } from 'react-native'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addCartItem } from '../features/cart/cartSlice'
+import colors from '../utils/globals/colors'
 
 const Counter = ({initialValue, textButton, product}) => {
 
@@ -21,10 +22,16 @@ const Counter = ({initialValue, textButton, product}) => {
 
   return (
     <View style={styles.counterContainer}>
-        <Button title='+' onPress={()=> setCount(count + 1)}/>
+        <Pressable style={styles.buttonSusInc} onPress={()=> setCount(count + 1)}>
+          <Text style={styles.text}>+</Text>
+        </Pressable>
         <Text style={styles.text}>{count}</Text>
-        <Button title='-'  onPress={ handlerDecrement }/>   
-        <Button title={textButton} onPress={()=>handlerAddCartItem(count)} />
+        <Pressable style={styles.buttonSusInc} onPress={handlerDecrement}>
+          <Text style={styles.text}>-</Text>
+        </Pressable>
+        <Pressable style={styles.buttonCar} onPress={()=>handlerAddCartItem(count)}>
+          <Text style={styles.text}>{textButton}</Text>
+        </Pressable>
     </View>
   )
 }
@@ -32,15 +39,30 @@ const Counter = ({initialValue, textButton, product}) => {
 export default Counter
 
 const styles = StyleSheet.create({
-    counterContainer:{
-        width:200,
+      counterContainer:{
+        width:250,
         flexDirection:"row",
         justifyContent:"space-around",
         alignItems:"center",
-        margin:10
+        
       },
       text:{
-        width:50,
+        fontSize: 20,
         textAlign:"center"
+      },
+      buttonSusInc: {
+        backgroundColor: colors.orangeLight,
+        width:"15%",
+        padding:10,
+        alignItems:"center",
+        borderRadius:10
+        
+      },
+      buttonCar: {
+        backgroundColor: colors.orangeLight,
+        width:"40%",
+        padding:10,
+        alignItems:"center",
+        borderRadius:10,
       }
 })

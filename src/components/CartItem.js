@@ -20,11 +20,9 @@ const CartItem = ({item}) => {
             <View style={styles.containerImage}>
                 <Image style= {styles.image} source={{uri:item.thumbnail}} resizeMode='cover'/>
                 <Pressable onPress={()=> dispatch(deleteCartItem(item.id))}>
-                    <Entypo name="trash" size={30} color="red"/>
+                    <Entypo name="trash" size={30} color="black"/>
                 </Pressable>
             </View>
-            
-            
         </View>
   )
 }
@@ -33,9 +31,8 @@ export default CartItem
 
 const styles = StyleSheet.create({
     card:{
-        backgroundColor:colors.primary,
         padding:20,
-        margin:10,
+        margin:5,
         borderWidth:2,
         borderRadius:10,
         flexDirection:"row",
@@ -47,7 +44,7 @@ const styles = StyleSheet.create({
     },
     text:{
         color:colors.black,
-        fontSize:19,
+        fontSize:17,
         fontFamily:fonts.robotoBold
     },
     text2:{
@@ -58,13 +55,13 @@ const styles = StyleSheet.create({
     containerImage:{
         flexDirection: 'row',
         alignItems: 'center',
-        right: 20
+        right: 15
     },
     image: {
-        minWidth: 90,
-        minHeight: 90,
-        right:50,
+        minWidth: 100,
+        minHeight: 100,
+        right:15,
         width: '30%',
-        borderRadius: 5
+        borderRadius: 25
     }
 })

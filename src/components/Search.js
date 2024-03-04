@@ -62,9 +62,9 @@ export default Search
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        backgroundColor: colors.primary,
-        padding: 15,
-        alignItems: 'center'
+        padding: 10,
+        alignItems: 'center',
+        
     },
     input: {
         flex: 1,

@@ -1,23 +1,19 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import products from '../utils/data/products.json'
-import { useEffect, useState, useContext } from 'react'
+import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native'
+import { useContext } from 'react'
 import colors from '../utils/globals/colors'
 import { OrientationContext } from '../utils/globals/context';
 import Counter from '../components/Counter';
+import { useGetProductQuery } from '../app/services/shop'
 
 const ProductDetail = ({route}) => {
   const {productId} = route.params
-  const [product, setProduct] = useState({})
-  
   const portrait = useContext(OrientationContext);
+  const {data:product, isLoading} = useGetProductQuery(productId)
 
-  useEffect(()=> {
-    const productFinded = products.find(product => product.id === productId)
-    setProduct(productFinded)
-  }, [productId])
+  if(isLoading) return <View><Text>Cargando...</Text></View>
 
   return (
-    <View style={styles.container}>
+    <ImageBackground style={styles.container} source={require("../../assets/fondodefinitivo.png")}>
       <View style={[styles.content, !portrait && styles.contentLandscape]}>
         <Image
           style= {[styles.image, !portrait && styles.imageLandScape]}
@@ -34,10 +30,9 @@ const ProductDetail = ({route}) => {
             initialValue={1} 
             product={product} 
             textButton="Carrito"/>
-
         </View>
       </View>
-    </View>
+    </ImageBackground>
   )
 }
 

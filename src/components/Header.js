@@ -6,7 +6,7 @@ const Header = ({title= "Ecommerce", navigation}) => {
   return <View style={styles.container}>
           {navigation.canGoBack() &&
           <Pressable style={styles.goBack} onPress={() => navigation.goBack()}>
-            <AntDesign name='arrowleft' size={30} color="black"/>
+            <AntDesign name='arrowleft' size={30} color="white"/>
           </Pressable>}
           <Text style={styles.text}>{title}</Text>
           
@@ -19,7 +19,7 @@ export default Header
 const styles = StyleSheet.create({
 
     container:{
-      backgroundColor: colors.primary,
+      backgroundColor: colors.black,
       height: 90,
       paddingTop:30,
       width: '100%',
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         
     },
     text: {
-      fontSize: 30
+      fontSize: 30,
+      color:colors.lightGray
     },
     goBack: {
       position: 'absolute',

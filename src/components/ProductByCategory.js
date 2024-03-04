@@ -16,7 +16,7 @@ export default ProductByCategory
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.primary,
+        backgroundColor: colors.orangeLight,
         width: '90%',
         marginHorizontal: '5%',
         padding: 10,

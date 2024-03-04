@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
     container: {
         width: '80%',
-        backgroundColor: colors.primary,
+        backgroundColor: colors.orangeLight,
         marginHorizontal: '10%',
         marginVertical: 10,
         padding: 20,
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 16,
-        fontFamily: fonts.robotoBold
+        fontFamily: fonts.robotoBold,
+        color: 'black'
     }
 })

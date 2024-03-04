@@ -13,7 +13,7 @@ const OrderItem = ({order}) => {
             </Text>
             <Text style={styles.text2}>$ {order.total}</Text>
         </View>
-        <Feather name="search" size={30} color="gray"/>
+        <Feather name="search" size={30} color="black"/>
     </View>
   )
 }
@@ -22,7 +22,7 @@ export default OrderItem
 
 const styles = StyleSheet.create({
     card:{
-        backgroundColor:colors.primary,
+        backgroundColor:colors.orangeLight,
         borderWidth:2,
         margin:10,
         padding:10,

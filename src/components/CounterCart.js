@@ -1,6 +1,7 @@
-import { StyleSheet, View, Button,Text } from 'react-native'
+import { StyleSheet, View, Pressable, Text } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { addCartItem } from '../features/cart/cartSlice'
+import colors from '../utils/globals/colors'
 
 const CounterCart = ({item}) => {
 
@@ -14,9 +15,13 @@ const CounterCart = ({item}) => {
 
   return (
     <View style={styles.counterContainer}>
-        <Button title='+' onPress={()=> dispatch(addCartItem({...item,quantity:1})) }/>
+        <Pressable style={styles.buttonSusInc} onPress={()=> dispatch(addCartItem({...item,quantity:1})) }>
+          <Text style={styles.text}>+</Text>
+        </Pressable>
         <Text style={styles.text}>{item.quantity}</Text>
-        <Button title='-'  onPress={handlerDecrement}/>   
+        <Pressable style={styles.buttonSusInc} onPress={handlerDecrement}>
+          <Text style={styles.text}>-</Text>
+        </Pressable>  
     </View>
   )
 }
@@ -33,6 +38,15 @@ const styles = StyleSheet.create({
       },
       text:{
         width:50,
-        textAlign:"center"
+        textAlign:"center",
+        color: colors.black
+      },
+      buttonSusInc: {
+        backgroundColor: colors.orangeLight,
+        width:"30%",
+        padding:10,
+        alignItems:"center",
+        borderRadius:10
+        
       }
 })

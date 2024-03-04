@@ -6,8 +6,8 @@ const TabBarIcon = ({title, nameIcon, focused, portrait}) => {
   return (
     <View style={styles.container}>
       <View style={[styles.iconContainer, !portrait && styles.iconContainerLandscape]}>
-        <Entypo name={nameIcon} size={25} color={focused ? colors.black:colors.gray}/>  
-        <Text style={[styles.text,!focused && styles.textFocused]} >{title}</Text>
+        <Entypo name={nameIcon} size={25} color={focused ? colors.black:colors.white}/>  
+        <Text style={[styles.text, !focused && styles.textFocused]} >{title}</Text>
       </View>
     </View>
   )
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     fontSize:15
   },
   textFocused:{
-    color: colors.gray
+    color: colors.white
 }
 
 })
