@@ -10,7 +10,7 @@ const ProductDetail = ({route}) => {
   const portrait = useContext(OrientationContext);
   const {data:product, isLoading} = useGetProductQuery(productId)
 
-  if(isLoading) return <View><Text>Cargando...</Text></View>
+  if(isLoading) return <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}><Text>Cargando...</Text></ImageBackground> 
 
   return (
     <ImageBackground style={styles.container} source={require("../../assets/fondodefinitivo.png")}>
@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
   },
   content: {
     width: '100%'
+  },
+  main: {
+    height: '100%'
   },
   contentLandscape: {
     flexDirection: 'row',

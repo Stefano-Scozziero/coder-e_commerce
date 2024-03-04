@@ -23,19 +23,21 @@ const ProductsByCategory = ({route, navigation}) => {
   }))
   },[categorySelected,keyword,products])
 
-  if(isLoading) return <View><Text>Cargando...</Text></View>
+  if(isLoading) return  <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}><Text>Cargando...</Text></ImageBackground> 
 
 
   return (
     <>
       <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}>
       <Search handlerKeyword={handlerKeyword}/>
+      <View style={styles.view}>
         <FlatList
           data={productsFiltered}
           keyExtractor={item => item.id}
           renderItem={({item}) => <ProductByCategory navigation={navigation} item={item}/>}
         
         />
+      </View>
       </ImageBackground> 
     </>
   )
@@ -46,5 +48,8 @@ export default ProductsByCategory
 const styles = StyleSheet.create({
     main: {
       height: '100%'
+    },
+    view: {
+      height: '80%'
     }
 })
