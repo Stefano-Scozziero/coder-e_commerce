@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const shopApi = createApi({
     reducerPath:"shopApi",
-    baseQuery:fetchBaseQuery({baseUrl:"https://cursodesarrollo-8311f-default-rtdb.firebaseio.com/"}),
+    baseQuery:fetchBaseQuery({baseUrl:"https://cursodesarrollo-8311f-default-rtdb.firebaseio.com"}),
     endpoints:(builder)=>({
         getProductsByCategory:builder.query({
             query: (category) => `/products.json?orderBy="category"&equalTo="${category}"`,

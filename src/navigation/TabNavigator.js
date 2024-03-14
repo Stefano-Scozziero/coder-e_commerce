@@ -6,6 +6,7 @@ import CartStack from './CartStack'
 import OrdersStack from './OrdersStack'
 import TabBarIcon from '../components/TapBarIcon';
 import colors from '../utils/globals/colors';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +44,14 @@ const TabNavigator = ({portrait}) => {
                     options={{
                         tabBarIcon: ({focused}) => <TabBarIcon title="Ordenes" nameIcon="list" focused={focused} portrait={portrait}/>
                     }}
-                    />
+                />
+                <Tab.Screen 
+                    name='ProfileStack' 
+                    component={ProfileStack}
+                    options={{
+                        tabBarIcon: ({focused}) => <TabBarIcon title="Perfil" nameIcon="user" focused={focused} portrait={portrait}/>
+                    }}
+                />
            </Tab.Navigator>
   )
 }
@@ -52,7 +60,7 @@ export default TabNavigator
 
 const styles = StyleSheet.create({
     tabBar:{
-        backgroundColor:colors.orangeLight,
+        backgroundColor:colors.lightBlue,
         height:80,
         position:"absolute",
         left:20,
@@ -70,7 +78,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2.62, 
     },
     tabBarLandScape:{
-      backgroundColor:colors.orangeLight,
+      backgroundColor:colors.lightBlue,
       height:80,
       position:"absolute",
       left:40,

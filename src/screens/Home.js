@@ -1,13 +1,13 @@
-import { ImageBackground, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import Categories from '../components/Categories'
 
 
 const Home = ({navigation}) => {
   return (
     <>
-      <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}>
+      <View style={styles.main}>
         <Categories navigation={navigation}/>
-      </ImageBackground>
+      </View>
       
     </>
 

@@ -9,7 +9,6 @@ const Header = ({title= "Ecommerce", navigation}) => {
             <AntDesign name='arrowleft' size={30} color="white"/>
           </Pressable>}
           <Text style={styles.text}>{title}</Text>
-          
          </View>
   
 }
@@ -19,7 +18,7 @@ export default Header
 const styles = StyleSheet.create({
 
     container:{
-      backgroundColor: colors.black,
+      backgroundColor: colors.lightBlue,
       height: 90,
       paddingTop:30,
       width: '100%',
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 30,
-      color:colors.lightGray
+      color:colors.black
     },
     goBack: {
       position: 'absolute',

@@ -9,7 +9,9 @@ export const authApi = createApi({
                 url:"accounts:signUp?key=AIzaSyDYV4C5K0zONpBbfWPTkBBLXopBHx-7T-U",
                 method:"POST",
                 body:user
+                
             })
+           
         }),
         login: builder.mutation({
             query: (user) => ({
@@ -19,6 +21,7 @@ export const authApi = createApi({
             })
         })
     })
+    
 })
 
 export const {useRegisterMutation,useLoginMutation} = authApi

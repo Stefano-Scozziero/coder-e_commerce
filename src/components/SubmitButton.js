@@ -1,4 +1,4 @@
-import { StyleSheet, Text,Pressable } from 'react-native'
+import { StyleSheet, Text, Pressable } from 'react-native'
 import colors from '../utils/globals/colors'
 
 
@@ -17,9 +17,9 @@ export default SubmitButton
 
 const styles = StyleSheet.create({
     button:{
-        width:"70%",
-        backgroundColor: colors.orange,
-        padding:10,
+        width:"85%",
+        backgroundColor: colors.lightBlue,
+        padding:15,
         alignItems:"center",
         borderRadius:10
     },

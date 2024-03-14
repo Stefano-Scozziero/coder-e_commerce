@@ -1,16 +1,16 @@
-import { StyleSheet,FlatList, ImageBackground } from 'react-native'
+import { StyleSheet,FlatList, View } from 'react-native'
 import orders from '../utils/data/orders.json'
 import OrderItem from '../components/OrderItem'
 
 const Orders = () => {
   return (
-    <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}> 
+    <View style={styles.main}> 
        <FlatList
       data={orders}
       keyExtractor={(item)=>item.id}
       renderItem={({item})=> <OrderItem order={item}/>}
       />
-    </ImageBackground>
+    </View>
    
     
   )

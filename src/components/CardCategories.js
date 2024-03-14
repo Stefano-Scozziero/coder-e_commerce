@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
     container: {
         width: '80%',
-        backgroundColor: colors.orangeLight,
+        backgroundColor: colors.lightBlue,
         marginHorizontal: '10%',
         marginVertical: 10,
         padding: 20,

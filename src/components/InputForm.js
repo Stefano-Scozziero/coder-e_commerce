@@ -14,7 +14,7 @@ const InputForm = ({label,value, onChangeText,isSecure,error}) => {
             style={styles.input}
             secureTextEntry={isSecure}
             placeholder={label}
-            placeholderTextColor={colors.lightGray}
+            placeholderTextColor={colors.lightBlue}
             
         />
         {error ? <View><Text style={styles.error}>{error}</Text></View> : null}
@@ -28,13 +28,14 @@ export default InputForm
 
 const styles = StyleSheet.create({
     inputContainer:{
-        width:"100%"
+        width:"100%",
+        alignItems: 'center'
     },
     input:{
-        width:"90%",
+        width:"70%",
         borderWidth:0,
         borderBottomWidth:1,
-        borderBottomColor:"white",
+        borderBottomColor:colors.lightBlue,
         padding:2,
         fontFamily:fonts.JosefinSansBold,
         fontSize:14,
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
       titleInput:{
         width:"90%",
         marginHorizontal:"5%",
-        color: colors.lightGray,
+        color: colors.pink,
         fontSize:16,
         fontFamily:fonts.JosefinSansBold
       },

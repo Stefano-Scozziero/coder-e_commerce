@@ -8,7 +8,7 @@ const Cart = () => {
 
     const cart = useSelector((state) => state.cart)
   return (
-    <ImageBackground style={styles.container} source={require("../../assets/fondodefinitivo.png")}>
+    <View style={styles.container}>
         <View style={styles.flatList} >
             <FlatList
             style={styles.flatList}
@@ -23,7 +23,7 @@ const Cart = () => {
                 </Pressable>
                 <Text style={styles.confirmText}>Total: $ {cart.total}</Text>
             </View>
-    </ImageBackground>
+    </View>
   )
 }
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     confirmContainer:{
         flexDirection:"row",
-        borderColor: colors.orangeLight,
+        borderColor: colors.pink,
         borderWidth: 1,
         padding:25,
         bottom: 120,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     confirm: {
-        backgroundColor: colors.orangeLight,
+        backgroundColor: colors.lightBlue,
         paddingVertical: 5,
         paddingHorizontal: 10,
         borderRadius: 5,

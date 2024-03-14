@@ -22,7 +22,7 @@ export default OrderItem
 
 const styles = StyleSheet.create({
     card:{
-        backgroundColor:colors.orangeLight,
+        backgroundColor:colors.lightBlue,
         borderWidth:2,
         margin:10,
         padding:10,

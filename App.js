@@ -5,7 +5,9 @@ import { OrientationProvider } from './src/utils/globals/context';
 import { useContext, useEffect } from 'react';
 import { store } from './src/app/store'
 import { Provider } from 'react-redux'
+
 import MainNavigator from './src/navigation/MainNavigator'
+import colors from './src/utils/globals/colors';
 
 
 const App = () => {
@@ -23,7 +25,7 @@ const App = () => {
   return (
     <>
       <OrientationProvider>
-        <StatusBar backgroundColor='black' style='light'/>
+        <StatusBar backgroundColor={colors.black} style='light'/>
         <Provider store={store}>
           <MainNavigator portrait={portrait}/>
         </Provider>

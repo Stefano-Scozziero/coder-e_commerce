@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         color: colors.black
       },
       buttonSusInc: {
-        backgroundColor: colors.orangeLight,
+        backgroundColor: colors.lightBlue,
         width:"30%",
         padding:10,
         alignItems:"center",

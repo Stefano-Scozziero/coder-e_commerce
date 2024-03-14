@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         textAlign:"center"
       },
       buttonSusInc: {
-        backgroundColor: colors.orangeLight,
+        backgroundColor: colors.lightBlue,
         width:"15%",
         padding:10,
         alignItems:"center",
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         
       },
       buttonCar: {
-        backgroundColor: colors.orangeLight,
+        backgroundColor: colors.lightBlue,
         width:"40%",
         padding:10,
         alignItems:"center",

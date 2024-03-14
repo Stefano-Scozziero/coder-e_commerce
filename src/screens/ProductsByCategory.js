@@ -23,12 +23,12 @@ const ProductsByCategory = ({route, navigation}) => {
   }))
   },[categorySelected,keyword,products])
 
-  if(isLoading) return  <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}><Text>Cargando...</Text></ImageBackground> 
+  if(isLoading) return  <View style={styles.main}><Text>Cargando...</Text></View> 
 
 
   return (
     <>
-      <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}>
+      <View style={styles.main}>
       <Search handlerKeyword={handlerKeyword}/>
       <View style={styles.view}>
         <FlatList
@@ -38,7 +38,7 @@ const ProductsByCategory = ({route, navigation}) => {
         
         />
       </View>
-      </ImageBackground> 
+      </View> 
     </>
   )
 }

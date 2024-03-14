@@ -10,10 +10,10 @@ const ProductDetail = ({route}) => {
   const portrait = useContext(OrientationContext);
   const {data:product, isLoading} = useGetProductQuery(productId)
 
-  if(isLoading) return <ImageBackground style={styles.main} source={require("../../assets/fondodefinitivo.png")}><Text>Cargando...</Text></ImageBackground> 
+  if(isLoading) return <View style={styles.main}><Text>Cargando...</Text></View> 
 
   return (
-    <ImageBackground style={styles.container} source={require("../../assets/fondodefinitivo.png")}>
+    <View style={styles.container} >
       <View style={[styles.content, !portrait && styles.contentLandscape]}>
         <Image
           style= {[styles.image, !portrait && styles.imageLandScape]}
@@ -32,7 +32,7 @@ const ProductDetail = ({route}) => {
             textButton="Carrito"/>
         </View>
       </View>
-    </ImageBackground>
+    </View>
   )
 }
 

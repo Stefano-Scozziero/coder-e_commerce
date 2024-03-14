@@ -17,16 +17,16 @@ export default SubmitButtonbgn
 
 const styles = StyleSheet.create({
     button:{
-        width:"70%",
+        width:"85%",
         borderWidth: 1,
-        borderColor: colors.orange,
-        padding:10,
+        borderColor: colors.lightBlue,
+        padding:15,
         alignItems:"center",
         borderRadius:10
     },
     text:{
         textAlign:"center",
-        color:"white",
+        color: colors.lightBlue,
         fontSize:15
     }
 })
