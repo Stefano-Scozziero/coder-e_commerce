@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { useFonts } from 'expo-font'
 import { fontsCollections } from './src/utils/globals/fonts'
-import { OrientationProvider } from './src/utils/globals/context';
-import { useContext, useEffect } from 'react';
+import { OrientationProvider} from './src/utils/globals/context';
 import { store } from './src/app/store'
 import { Provider } from 'react-redux'
 
@@ -11,8 +10,6 @@ import colors from './src/utils/globals/colors';
 
 
 const App = () => {
-
-  const portrait = useContext(OrientationProvider)
 
   let [fontsLoaded] = useFonts(fontsCollections);
 
@@ -27,7 +24,7 @@ const App = () => {
       <OrientationProvider>
         <StatusBar backgroundColor={colors.black} style='light'/>
         <Provider store={store}>
-          <MainNavigator portrait={portrait}/>
+          <MainNavigator/>
         </Provider>
       </OrientationProvider>
     </>

@@ -29,7 +29,7 @@ const ProductDetail = ({route}) => {
           <Counter 
             initialValue={1} 
             product={product} 
-            textButton="Carrito"/>
+            textButton="Agregar"/>
         </View>
       </View>
     </View>
@@ -51,8 +51,9 @@ const styles = StyleSheet.create({
   contentLandscape: {
     flexDirection: 'row',
     alignItems: 'center',
+    bottom: 39, 
     gap: 15,
-    marginVertical: 15
+    marginHorizontal: 10
   },
   image: {
     width: '100%',
@@ -69,9 +70,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   imageLandScape: {
-    marginHorizontal: 20,
-    width: 300,
-    height: 300
+    marginHorizontal: 10,
+    width: 250,
+    height: 250
   },
   goBack: {
     width: '100%',

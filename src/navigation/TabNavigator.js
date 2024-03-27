@@ -11,22 +11,24 @@ import ProfileStack from './ProfileStack';
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = ({portrait}) => {
+    
   return (
+    
             <Tab.Navigator
-                initialRouteName='ShopStack'
-                screenOptions={{
-                    headerShown:false,
-                    tabBarShowLabel:false,
-                    tabBarStyle: [styles.tabBar, !portrait && styles.tabBarLandScape]
+            initialRouteName='ShopStack'
+            screenOptions={{
+                headerShown:false,
+                tabBarShowLabel:false,
+                tabBarStyle: [styles.tabBar, !portrait && styles.tabBarLandScape]
 
-                }}
-           >
+            }}>
+                
                 <Tab.Screen
                 name='ShopStack'
                 component={ShopStack}
                 options={{
                     tabBarIcon: ({focused}) => 
-                    <TabBarIcon title="Productos" nameIcon="home" focused={focused} portrait={portrait}/>
+                    <TabBarIcon title="Productos" nameIcon="home" focused={focused}/>
                 }}
                 />
                 <Tab.Screen 
@@ -34,7 +36,7 @@ const TabNavigator = ({portrait}) => {
                     component={CartStack}
                     options={{
                         tabBarIcon: ({focused}) => 
-                        <TabBarIcon title="Carrito" nameIcon="shopping-cart" focused={focused} portrait={portrait}/>
+                        <TabBarIcon title="Carrito" nameIcon="shopping-cart" focused={focused}/>
                     }}
 
                 />
@@ -42,14 +44,14 @@ const TabNavigator = ({portrait}) => {
                     name='OrdersStack' 
                     component={OrdersStack}
                     options={{
-                        tabBarIcon: ({focused}) => <TabBarIcon title="Ordenes" nameIcon="list" focused={focused} portrait={portrait}/>
+                        tabBarIcon: ({focused}) => <TabBarIcon title="Ordenes" nameIcon="list" focused={focused}/>
                     }}
                 />
                 <Tab.Screen 
                     name='ProfileStack' 
                     component={ProfileStack}
                     options={{
-                        tabBarIcon: ({focused}) => <TabBarIcon title="Perfil" nameIcon="user" focused={focused} portrait={portrait}/>
+                        tabBarIcon: ({focused}) => <TabBarIcon title="Perfil" nameIcon="user" focused={focused}/>
                     }}
                 />
            </Tab.Navigator>
@@ -63,9 +65,8 @@ const styles = StyleSheet.create({
         backgroundColor:colors.lightBlue,
         height:80,
         position:"absolute",
-        left:20,
-        right:20,
-        bottom:25,
+        marginHorizontal: 20,
+        bottom:20,
         borderRadius:15,
         elevation:4,
         /*Shadow IOS*/
@@ -81,9 +82,8 @@ const styles = StyleSheet.create({
       backgroundColor:colors.lightBlue,
       height:80,
       position:"absolute",
-      left:40,
-      right:40,
-      bottom:25,
+      marginHorizontal: 40,
+      bottom:10,
       borderRadius:15,
       elevation:4,
       /*Shadow IOS*/

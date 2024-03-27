@@ -1,19 +1,33 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {Feather} from "@expo/vector-icons"
 import colors from '../utils/globals/colors'
 import fonts from '../utils/globals/fonts'
+import React, { useState } from 'react';
 
 const OrderItem = ({order}) => {
+
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handlePress = () => {
+    setShowDetails(!showDetails);
+  };
 
   return (
     <View style={styles.card}>
         <View style={styles.textContainer}>
-            <Text style={styles.text}>
-                {new Date(order.createdAt).toLocaleString()}
-            </Text>
-            <Text style={styles.text2}>$ {order.total}</Text>
+        <Text style={styles.text}>{order.createdAt}</Text>
+        <Text style={styles.text2}>$ {order.total}</Text>
+        {showDetails && (
+          <View>
+            <Text>Descripción:</Text>
+            <Text>{order.items[0].title}</Text>
+          </View>
+        )}
         </View>
-        <Feather name="search" size={30} color="black"/>
+        <TouchableOpacity onPress={handlePress}>
+            <Feather name="search" size={30} color="black" />
+        </TouchableOpacity>
+        
     </View>
   )
 }
@@ -29,7 +43,7 @@ const styles = StyleSheet.create({
         borderRadius:10,
         flexDirection:"row",
         justifyContent:"space-between",
-        height:100,
+        height:120,
         alignItems:"center"
         
     },

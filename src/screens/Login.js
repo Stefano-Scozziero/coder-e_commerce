@@ -61,7 +61,7 @@ const Login = ({navigation}) => {
                   isSecure={true}
                   error={errorPassword}
               />
-              <SubmitButton onPress={onSubmit} title="INICIAR SESION"/>
+              <SubmitButton  onPress={onSubmit} title="INICIAR SESION"/>
               <SubmitButtonbgn onPress={()=> navigation.navigate("Register")} title="REGISTRESE AQUI"/>
               <Pressable>
                 <Text style={styles.btnText}>Olvido su contraseña?</Text>

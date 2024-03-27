@@ -8,7 +8,7 @@ export const OrientationProvider = ({ children }) => {
   const [portrait, setPortrait] = useState(true);
 
   useEffect(() => {
-    setPortrait(height > width);
+    setPortrait(width < height);
   }, [height, width]);
 
   return (
