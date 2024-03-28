@@ -4,10 +4,11 @@ import { fontsCollections } from './src/utils/globals/fonts'
 import { OrientationProvider} from './src/utils/globals/context';
 import { store } from './src/app/store'
 import { Provider } from 'react-redux'
-
 import MainNavigator from './src/navigation/MainNavigator'
 import colors from './src/utils/globals/colors';
+import { init } from './src/utils/db'
 
+init()
 
 const App = () => {
 

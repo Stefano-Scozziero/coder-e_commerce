@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         fontFamily: fonts.robotoBold
     },
     image: {
-        minWidth: 90,
-        minHeight: 90,
+        minWidth: 80,
+        minHeight: 80,
         width: '30%',
         borderRadius: 5
     }

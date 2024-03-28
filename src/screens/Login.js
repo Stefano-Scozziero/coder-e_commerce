@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View , ImageBackground, Image, Pressable, } from 'react-native'
 import InputForm from '../components/InputForm'
 import SubmitButton from '../components/SubmitButton'
+import SubmitButtonbgn from '../components/SubmitButtonbgn'
 import {useState} from 'react'
+import colors from '../utils/globals/colors'
 import fonts from '../utils/globals/fonts'
 import { useLoginMutation } from '../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
-import SubmitButtonbgn from '../components/SubmitButtonbgn'
-import colors from '../utils/globals/colors'
 import { loginSchema } from '../utils/validations/authSchema'
+import { deleteSession, insertSession } from '../utils/db'
 
 const Login = ({navigation}) => {
 
@@ -23,9 +24,10 @@ const Login = ({navigation}) => {
       try {
         loginSchema.validateSync({email, password})
         const {data} = await  triggerLogin({email,password})
+        deleteSession()
+        insertSession(data)
         dispatch(setUser({email:data.email,idToken:data.idToken, localId: data.localId}))
       } catch (error) {
-
         setErrorEmail("")
         setErrorPassword("")
 

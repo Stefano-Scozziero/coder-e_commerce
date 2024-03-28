@@ -1,13 +1,14 @@
-import {useEffect, useState } from 'react'
-import { StyleSheet, Image, View, ImageBackground } from 'react-native'
+import {useEffect, useState, useContext } from 'react'
+import { StyleSheet, Image, View } from 'react-native'
 import AddButton from '../components/AddButton'
 import * as ImagePicker from 'expo-image-picker'
 import { useGetImageQuery, usePutImageMutation } from '../app/services/profile'
 import { useSelector } from 'react-redux'
+import { OrientationContext } from '../utils/globals/context'
 
 
 const ImageSelector = ({navigation}) => {
-
+    const portrait = useContext(OrientationContext)
     const [image,setImage] = useState("")
     const [triggerImage] = usePutImageMutation()
     const localId = useSelector((state)=>state.auth.localId)
@@ -42,16 +43,17 @@ const ImageSelector = ({navigation}) => {
 
 
   return (
-    <View style={styles.main}>
-    <View style={styles.container}>
+    <View style={[styles.main, !portrait && styles.mainLandScape]}>
+    <View style={[styles.container, !portrait && styles.containerLandScape]}>
        <Image
             source={image ? {uri:image}: require("../../assets/usuario.png")}
-            style={styles.image}
+            style={[styles.image, !portrait && styles.imageLandScape]}
             resizeMode='cover'
-
         />
-        <AddButton title="Tomar foto" onPress={pickImage} />
-        <AddButton title="Confirm photo" onPress={confirmImage} />
+        <View style={[styles.Button, !portrait && styles.ButtonLandScape]}>
+            <AddButton title="Tomar foto" onPress={pickImage} />
+            <AddButton title="Confirm photo" onPress={confirmImage} />
+        </View>
     </View>
     </View>
   )
@@ -62,15 +64,42 @@ export default ImageSelector
 
 
 const styles = StyleSheet.create({
-    main: {
+    main:{
         flex: 1
     },
+    mainLandScape:{
+        flexDirection: 'row'
+    },
     container:{
-        alignItems:"center",
-        marginTop:20
+        flex: 1,
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        bottom: '5%',
+    },
+    containerLandScape:{
+        flexDirection: 'row',
+        marginTop: 0,
     },
     image:{
-        width:200,
-        height:200
-    }
+        width: 200,
+        height: 200,
+        marginVertical: 40
+    },
+    imageLandScape:{
+        width: 150,
+        height: 150,
+        bottom: '4%'
+    },
+    Button:{
+        marginTop: 20,
+        alignItems: 'center',
+        bottom: '5%',
+        width: 300
+    },
+    ButtonLandScape:{
+        flexDirection: 'column',
+        marginTop: 0,
+        bottom: '3%'
+    },
 })

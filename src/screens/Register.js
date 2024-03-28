@@ -2,50 +2,56 @@ import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import InputForm from '../components/InputForm'
 import SubmitButton from '../components/SubmitButton'
 import {useState} from 'react'
+import colors from '../utils/globals/colors'
 import fonts from '../utils/globals/fonts'
 import { useRegisterMutation } from '../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { registerSchema } from '../utils/validations/authSchema'
-import colors from '../utils/globals/colors'
+import { deleteSession, insertSession } from '../utils/db'
 
 const Register = ({navigation}) => {
 
-    const dispatch = useDispatch()
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
-    const [errorEmail, setErrorEmail] = useState("")
-    const [errorPassword, setErrorPassword] = useState("")
-    const [errorConfirmPassword, setErrorConfirmPassword] = useState("")
-    const [triggerRegister] = useRegisterMutation()
+  const dispatch = useDispatch()
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const [confirmPassword,setConfirmPassword] = useState("")
+  const [errorEmail,setErrorEmail] = useState("")
+  const [errorPassword,setErrorPassword] = useState("")
+  const [errorConfirmPassword,setErrorConfirmPassword] = useState("")
+  const [triggerRegister] = useRegisterMutation()
 
 
-    const onSubmit = async () => {
-      try {
-        registerSchema.validateSync({email, password, confirmPassword})
-        const {data} = await  triggerRegister({email,password})
-        console.log(data)
-        dispatch(setUser({email:data.email,idToken:data.idToken, localId: data.localId}))
-      } catch (error) {
-        setErrorEmail("")
-        setErrorPassword("")
-        setErrorConfirmPassword("")
-        switch(error.path){
-          case "email":
-            setErrorEmail(error.message)
-            break
-          case "password":
-            setErrorPassword(error.message)
-            break
-          case "confirmPassword":
-            setErrorConfirmPassword(error.message)
-            break
-          default:
-            break
-        }
+  const onSubmit = async () => {
+    try {
+      registerSchema.validateSync({email,password,confirmPassword})
+      const {data,error} = await  triggerRegister({email,password})
+      if(error){
+        console.log(error)
+      }
+      deleteSession()
+      insertSession(data)
+      dispatch(setUser({email:data.email,idToken:data.idToken,localId:data.localId}))
+    } catch (error) {
+      setErrorEmail("")
+      setErrorPassword("")
+      setErrorConfirmPassword("")
+      switch(error.path){
+        case "email":
+          setErrorEmail(error.message)
+          break
+        case "password":
+          setErrorPassword(error.message)
+          break
+        case "confirmPassword":
+          setErrorConfirmPassword(error.message)
+          break
+        default:
+          break
       }
     }
+
+  }
 
   return (
     <View style={styles.main}>

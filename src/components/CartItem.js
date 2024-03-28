@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     text:{
         color:colors.black,
-        fontSize:17,
+        fontSize:16,
         fontFamily:fonts.robotoBold
     },
     text2:{
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
         right: 15
     },
     image: {
-        minWidth: 100,
-        minHeight: 100,
+        minWidth: 80,
+        minHeight: 80,
         right:15,
         width: '30%',
         borderRadius: 25
