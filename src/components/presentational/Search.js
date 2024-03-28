@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, TextInput, View, Keyboard } from 'react-native'
 import { useState } from 'react'
 import {AntDesign} from '@expo/vector-icons'
-import colors from '../utils/globals/colors'
+import colors from '../../utils/globals/colors'
 
 const Search = ({handlerKeyWord}) => {
 

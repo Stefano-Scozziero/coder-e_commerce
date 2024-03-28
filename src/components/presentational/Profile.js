@@ -1,12 +1,12 @@
 import { StyleSheet,View,Image } from 'react-native'
-import AddButton from '../components/AddButton'
-import { useGetImageQuery } from '../app/services/profile'
-import { OrientationContext } from '../utils/globals/context'
+import AddButton from './AddButton'
+import { useGetImageQuery } from '../../app/services/profile'
+import { OrientationContext } from '../../utils/globals/context'
 import { useContext } from 'react'
 import DeleteButton from './DeleteButton'
 import { useDispatch, useSelector } from "react-redux"
-import { clearUser } from "../features/auth/authSlice"
-import { deleteSession } from "../utils/db"
+import { clearUser } from "../../features/auth/authSlice"
+import { deleteSession } from "../../utils/db"
 
 
 const Profile = ({navigation}) => {
@@ -26,7 +26,7 @@ const Profile = ({navigation}) => {
     <View style={[styles.main, !portrait && styles.mainLandScape]}>
         <View style={[styles.container, !portrait && styles.containerLandScape]}>
             <Image
-                source={data ? {uri:data.image}:require("../../assets/usuario.png")}
+                source={data ? {uri:data.image}:require("../../../assets/usuario.png")}
                 style={[styles.image, !portrait && styles.imageLandScape]}
                 resizeMode='cover'
             />

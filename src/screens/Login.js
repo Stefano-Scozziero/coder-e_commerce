@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View , ImageBackground, Image, Pressable, } from 'react-native'
-import InputForm from '../components/InputForm'
-import SubmitButton from '../components/SubmitButton'
-import SubmitButtonbgn from '../components/SubmitButtonbgn'
+import InputForm from '../components/presentational/InputForm'
+import SubmitButton from '../components/presentational/SubmitButton'
+import SubmitButtonbgn from '../components/presentational/SubmitButtonbgn'
 import {useState} from 'react'
 import colors from '../utils/globals/colors'
 import fonts from '../utils/globals/fonts'
@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { loginSchema } from '../utils/validations/authSchema'
 import { deleteSession, insertSession } from '../utils/db'
+import ModalMessage from '../components/presentational/ModalMessage'
 
 const Login = ({navigation}) => {
 
@@ -19,11 +20,21 @@ const Login = ({navigation}) => {
     const [errorEmail, setErrorEmail] = useState("")
     const [errorPassword, setErrorPassword] = useState("")
     const [triggerLogin] = useLoginMutation()
+    const [modalVisible, setModalVisible] = useState(false)
+
+    const handlerCloseModal = () => {
+      setModalVisible(false)
+    }
 
     const onSubmit = async () => {
       try {
         loginSchema.validateSync({email, password})
-        const {data} = await  triggerLogin({email,password})
+        const {data, error} = await  triggerLogin({email,password})
+        
+        if(error){
+          //console.log(error.data.error.message)
+          setModalVisible(true)
+        }
         deleteSession()
         insertSession(data)
         dispatch(setUser({email:data.email,idToken:data.idToken, localId: data.localId}))
@@ -45,6 +56,7 @@ const Login = ({navigation}) => {
     }
 
   return (
+    <>
       <View style={styles.main}>
         <Image source={require('../../assets/logoHeladeria.png')} style={styles.image} resizeMode='contain'/>
             <Text style={styles.title}>HELADERIA</Text>
@@ -80,6 +92,12 @@ const Login = ({navigation}) => {
               </Pressable> 
             </View>
       </View>
+      <ModalMessage 
+      textButton='Volver a intentar' 
+      text="Email o Contraseña invalido" 
+      modalVisible={modalVisible} 
+      onclose={handlerCloseModal}/>
+    </>
   )
 }
 

@@ -1,9 +1,9 @@
 import { Pressable, StyleSheet, Text, View, Image } from 'react-native'
 import {Entypo} from '@expo/vector-icons'
-import colors from '../utils/globals/colors'
-import fonts from '../utils/globals/fonts'
+import colors from '../../utils/globals/colors'
+import fonts from '../../utils/globals/fonts'
 import { useDispatch } from 'react-redux'
-import { deleteCartItem } from '../features/cart/cartSlice'
+import { deleteCartItem } from '../../features/cart/cartSlice'
 import CounterCart from './CounterCart'
 
 const CartItem = ({item, portrait}) => {

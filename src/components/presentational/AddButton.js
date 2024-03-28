@@ -1,34 +1,29 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import colors from '../utils/globals/colors'
-import {Feather} from "@expo/vector-icons"
+import colors from '../../utils/globals/colors'
 
-const DeleteButton = ({title, onPress}) => {
+const AddButton = ({title, onPress}) => {
   return (
     <Pressable style= {styles.container} onPress={onPress}>
-      <Feather name="log-out" size={25} color="white" />
-      <Text style= {styles.text}>{title}</Text>
+        <Text style= {styles.text}>{title}</Text>
     </Pressable>
   )
 }
 
-export default DeleteButton
+export default AddButton
 
 const styles = StyleSheet.create({
     container:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: 'red',
-        justifyContent: 'center',
+        backgroundColor: colors.lightBlue,
         width: "70%",
         paddingVertical: 8,
+        margin: 10,
         bottom: '3.5%',
         borderWidth: 1
     },
     text:{
         color: colors.white,
         textAlign: 'center',
-        marginHorizontal: 5,
         fontSize: 18
     }
 })

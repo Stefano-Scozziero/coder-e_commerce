@@ -10,7 +10,7 @@ const colors = {
     green3:"#40513B",
     black: "#000000",
     pink: "#FF0080",
-    lightBlue: "#00B8FF"
+    lightBlue: "#00B8FF",
 }
 
 export default colors

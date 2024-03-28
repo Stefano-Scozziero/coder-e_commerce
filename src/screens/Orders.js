@@ -1,5 +1,5 @@
 import { StyleSheet,FlatList, View } from 'react-native'
-import OrderItem from '../components/OrderItem'
+import OrderItem from '../components/presentational/OrderItem'
 import { useSelector } from 'react-redux'
 import { useGetOrdersQuery } from '../app/services/orders'
 import { OrientationContext } from '../utils/globals/context'

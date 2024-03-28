@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
-import InputForm from '../components/InputForm'
-import SubmitButton from '../components/SubmitButton'
+import InputForm from '../components/presentational/InputForm'
+import SubmitButton from '../components/presentational/SubmitButton'
 import {useState} from 'react'
 import colors from '../utils/globals/colors'
 import fonts from '../utils/globals/fonts'
@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { registerSchema } from '../utils/validations/authSchema'
 import { deleteSession, insertSession } from '../utils/db'
+import ModalMessage from '../components/presentational/ModalMessage'
 
 const Register = ({navigation}) => {
 
@@ -20,14 +21,20 @@ const Register = ({navigation}) => {
   const [errorPassword,setErrorPassword] = useState("")
   const [errorConfirmPassword,setErrorConfirmPassword] = useState("")
   const [triggerRegister] = useRegisterMutation()
+  const [modalVisible, setModalVisible] = useState(false)
 
+  const handlerCloseModal = () => {
+    setModalVisible(false)
+  }
 
   const onSubmit = async () => {
     try {
       registerSchema.validateSync({email,password,confirmPassword})
       const {data,error} = await  triggerRegister({email,password})
+
       if(error){
-        console.log(error)
+        //console.log(error.data.error.message)
+        setModalVisible(true)
       }
       deleteSession()
       insertSession(data)
@@ -54,6 +61,8 @@ const Register = ({navigation}) => {
   }
 
   return (
+    <>
+    
     <View style={styles.main}>
       <Image source={require('../../assets/logoHeladeria.png')} style={styles.image} resizeMode='contain'/>
       <Text style={styles.title}>REGISTRO</Text>
@@ -86,6 +95,12 @@ const Register = ({navigation}) => {
         </Pressable>
       </View>
     </View>
+    <ModalMessage 
+    textButton='Volver a intentar' 
+    text="Error en el registro" 
+    modalVisible={modalVisible} 
+    onclose={handlerCloseModal}/>
+  </>
   )
 }
 
@@ -108,7 +123,8 @@ const styles = StyleSheet.create({
     title:{
       fontFamily:fonts.russoOne,
       fontSize:55,
-      color: colors.lightBlue
+      color: colors.lightBlue,
+      bottom: 30
     },
     sub:{
       fontSize:14,
@@ -121,7 +137,7 @@ const styles = StyleSheet.create({
     },
     image: {
       width: '100%',
-      height: 120,
+      height: 130,
       bottom: '6.5%'
     },
 })

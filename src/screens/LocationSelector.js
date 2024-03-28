@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { useState,useEffect } from 'react'
-import MapPreview from '../components/MapPreview'
-import AddButton from '../components/AddButton'
+import MapPreview from '../components/presentational/MapPreview'
+import AddButton from '../components/presentational/AddButton'
 import * as Location from "expo-location"
 import { useSelector } from 'react-redux'
 import { usePutUserLocationMutation } from '../app/services/profile'

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View,TextInput } from 'react-native'
-import fonts from '../utils/globals/fonts'
-import colors from '../utils/globals/colors'
+import fonts from '../../utils/globals/fonts'
+import colors from '../../utils/globals/colors'
 
 
 const InputForm = ({label,value, onChangeText,isSecure,error}) => {

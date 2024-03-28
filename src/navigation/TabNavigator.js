@@ -4,7 +4,7 @@ import React from 'react'
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
 import OrdersStack from './OrdersStack'
-import TabBarIcon from '../components/TapBarIcon';
+import TabBarIcon from '../components/presentational/TapBarIcon';
 import colors from '../utils/globals/colors';
 import ProfileStack from './ProfileStack';
 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
     tabBarLandScape:{
       backgroundColor:colors.lightBlue,
-      height:80,
+      height:60,
       position:"absolute",
       marginHorizontal: 40,
       bottom:10,

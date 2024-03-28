@@ -2,15 +2,20 @@ import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native'
 import { useContext } from 'react'
 import colors from '../utils/globals/colors'
 import { OrientationContext } from '../utils/globals/context';
-import Counter from '../components/Counter';
+import Counter from '../components/presentational/Counter';
 import { useGetProductQuery } from '../app/services/shop'
+import LoadingSpinner from '../components/presentational/LoadingSpinner';
+import EmptyListComponent from '../components/presentational/EmptyListComponent';
+import Error from '../components/presentational/Error';
 
-const ProductDetail = ({route}) => {
+const ProductDetail = ({navigation, route}) => {
   const {productId} = route.params
   const portrait = useContext(OrientationContext);
-  const {data:product, isLoading} = useGetProductQuery(productId)
+  const {data:product, isLoading, isError, isSuccess} = useGetProductQuery(productId)
 
-  if(isLoading) return <View style={styles.main}><Text>Cargando...</Text></View> 
+  if(isLoading) return <LoadingSpinner/>
+  if(isError) return <Error message="¡Ups! Algo salió mal." textButton="Volver" onRetry={()=>navigation.goBack()}/>
+  if(isSuccess && product === null) return <EmptyListComponent message="El detalle del producto no esta disponible"/>
 
   return (
     <View style={styles.container} >
@@ -18,7 +23,7 @@ const ProductDetail = ({route}) => {
         <Image
           style= {[styles.image, !portrait && styles.imageLandScape]}
           source= {{uri:product?.images ? product.images[0] : null}}
-          resizeMode= 'contain'
+          resizeMode= 'stretch'
         />
         <View style={[styles.containerText, !portrait && styles.containerTextLandscape]}>
           <Text style={styles.title}>{product.title}</Text>
@@ -51,7 +56,6 @@ const styles = StyleSheet.create({
   contentLandscape: {
     flexDirection: 'row',
     alignItems: 'center',
-    bottom: 39, 
     gap: 15,
     marginHorizontal: 10
   },
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
   },
   imageLandScape: {
     marginHorizontal: 10,
+    marginTop:10,
     width: 250,
     height: 250
   },

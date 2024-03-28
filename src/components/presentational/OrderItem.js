@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native'
 import {Feather} from "@expo/vector-icons"
-import colors from '../utils/globals/colors'
-import fonts from '../utils/globals/fonts'
+import colors from '../../utils/globals/colors'
+import fonts from '../../utils/globals/fonts'
 import React, { useState } from 'react';
 
 const OrderItem = ({order, portrait}) => {

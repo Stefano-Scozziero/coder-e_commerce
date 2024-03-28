@@ -1,7 +1,7 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { addCartItem } from '../features/cart/cartSlice'
-import colors from '../utils/globals/colors'
+import { addCartItem } from '../../features/cart/cartSlice'
+import colors from '../../utils/globals/colors'
 
 const CounterCart = ({item}) => {
 

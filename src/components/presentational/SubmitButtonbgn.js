@@ -1,5 +1,5 @@
 import { StyleSheet, Text,Pressable } from 'react-native'
-import colors from '../utils/globals/colors'
+import colors from '../../utils/globals/colors'
 
 
 const SubmitButtonbgn = ({title,onPress}) => {

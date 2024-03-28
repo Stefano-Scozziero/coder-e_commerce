@@ -1,14 +1,19 @@
-import { FlatList, StyleSheet, View, Text, ImageBackground } from 'react-native'
-import { useEffect, useState } from 'react'
-import ProductByCategory from '../components/ProductByCategory'
-import Search from '../components/Search'
+import { FlatList, StyleSheet, View, Text } from 'react-native'
+import { useEffect, useState, useContext } from 'react'
+import ProductByCategory from '../components/presentational/ProductByCategory'
+import Search from '../components/presentational/Search'
 import { useGetProductsByCategoryQuery } from '../app/services/shop'
+import { OrientationContext } from '../utils/globals/context'
+import LoadingSpinner from '../components/presentational/LoadingSpinner'
+import EmptyListComponent from '../components/presentational/EmptyListComponent'
+import Error from '../components/presentational/Error'
 
 const ProductsByCategory = ({route, navigation}) => {
   const {categorySelected} = route.params
   const {data:products,isError,isLoading,isSuccess,error} = useGetProductsByCategoryQuery(categorySelected)
   const [productsFiltered,setProductsFiltered] = useState([])
   const [keyword,setKeyword] = useState("")
+  const portrait = useContext(OrientationContext)
 
   const handlerKeyword = (k) => {
     setKeyword(k)
@@ -23,18 +28,20 @@ const ProductsByCategory = ({route, navigation}) => {
   }))
   },[categorySelected,keyword,products])
 
-  if(isLoading) return  <View style={styles.main}><Text>Cargando...</Text></View> 
+  if(isLoading) return <LoadingSpinner/>
+  if(isError) return <Error message="¡Ups! Algo salió mal." textButton="Volver" onRetry={()=>navigation.goBack()}/>
+  if(isSuccess && products.length === 0) return <EmptyListComponent message="El producto no esta disponible"/>
 
 
   return (
     <>
       <View style={styles.main}>
       <Search handlerKeyword={handlerKeyword}/>
-      <View style={styles.view}>
+      <View style={[styles.view, !portrait && styles.viewLandScape]}>
         <FlatList
           data={productsFiltered}
           keyExtractor={item => item.id}
-          renderItem={({item}) => <ProductByCategory navigation={navigation} item={item}/>}
+          renderItem={({item}) => <ProductByCategory portrait={portrait} navigation={navigation} item={item}/>}
         
         />
       </View>
@@ -51,5 +58,8 @@ const styles = StyleSheet.create({
     },
     view: {
       height: '80%'
+    },
+    viewLandScape: {
+      height: '58%'
     }
 })

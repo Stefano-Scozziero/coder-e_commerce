@@ -1,8 +1,8 @@
 import { StyleSheet, View, Button,Text, Pressable } from 'react-native'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addCartItem } from '../features/cart/cartSlice'
-import colors from '../utils/globals/colors'
+import { addCartItem } from '../../features/cart/cartSlice'
+import colors from '../../utils/globals/colors'
 
 const Counter = ({initialValue, textButton, product}) => {
 

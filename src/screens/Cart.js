@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, FlatList, Pressable, ImageBackground } from 'react-native'
-import CartItem from '../components/CartItem'
+import CartItem from '../components/presentational/CartItem'
 import fonts from '../utils/globals/fonts'
 import colors from '../utils/globals/colors'
 import { useSelector,useDispatch} from 'react-redux'

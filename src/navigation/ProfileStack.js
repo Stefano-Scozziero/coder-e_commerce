@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Header from '../components/Header'
-import Profile from '../components/Profile'
+import Header from '../components/presentational/Header'
+import Profile from '../components/presentational/Profile'
 import ImageSelector from '../screens/ImageSelector'
 import LocationSelector from '../screens/LocationSelector'
 
