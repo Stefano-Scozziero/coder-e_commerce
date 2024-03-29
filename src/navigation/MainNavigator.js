@@ -18,7 +18,6 @@ const MainNavigator = () => {
     useEffect(()=>{
       ( async ()=>{
        const session = await fetchSession()
-       
        if(session.rows.length){
         const now = Math.floor(Date.now() / 1000)
         const updateAt = session.rows._array[0].updateAt
