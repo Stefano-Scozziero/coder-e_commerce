@@ -8,16 +8,19 @@ import LoadingSpinner from '../components/presentational/LoadingSpinner';
 import EmptyListComponent from '../components/presentational/EmptyListComponent';
 import Error from '../components/presentational/Error';
 
+
 const ProductDetail = ({navigation, route}) => {
   const {productId} = route.params
   const portrait = useContext(OrientationContext);
   const {data:product, isLoading, isError, isSuccess} = useGetProductQuery(productId)
-
+  
+  
   if(isLoading) return <LoadingSpinner/>
   if(isError) return <Error message="¡Ups! Algo salió mal." textButton="Volver" onRetry={()=>navigation.goBack()}/>
   if(isSuccess && product === null) return <EmptyListComponent message="El detalle del producto no esta disponible"/>
 
   return (
+    <>
     <View style={styles.container} >
       <View style={[styles.content, !portrait && styles.contentLandscape]}>
         <Image
@@ -34,10 +37,14 @@ const ProductDetail = ({navigation, route}) => {
           <Counter 
             initialValue={1} 
             product={product} 
-            textButton="Agregar"/>
+            textButton="Agregar"
+            navigation={navigation}/>
         </View>
       </View>
     </View>
+      
+    </>
+    
   )
 }
 

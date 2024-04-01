@@ -20,10 +20,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.krefrim.codere_commerce"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "97de473a-0a51-4247-a681-7afafe9b2bff"
+      }
     }
   }
 }

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { addCartItem } from '../../features/cart/cartSlice'
 import colors from '../../utils/globals/colors'
 
-const Counter = ({initialValue, textButton, product}) => {
+const Counter = ({navigation,initialValue, textButton, product}) => {
 
     const [count,setCount] = useState(initialValue)
     const dispatch = useDispatch()
@@ -12,6 +12,7 @@ const Counter = ({initialValue, textButton, product}) => {
     const handlerAddCartItem = (quantity) => {
       dispatch(addCartItem({...product,quantity}))
       setCount(1)
+      navigation.navigate("CartStack")
     }
 
     const handlerDecrement = () => {
@@ -19,6 +20,7 @@ const Counter = ({initialValue, textButton, product}) => {
         setCount(count - 1)
       }
     }
+
 
   return (
     <View style={styles.counterContainer}>

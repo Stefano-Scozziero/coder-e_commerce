@@ -26,6 +26,17 @@ const Cart = ({navigation}) => {
          dispatch(deleteCart())
          navigation.navigate("OrdersStack")
     }
+
+    if (!cart.items || cart.items.length === 0) {
+        return (
+          
+        <View style={[styles.container, !portrait && styles.containerLandScape]}>
+            <View style={[styles.containerText, !portrait && styles.containerTextLandScape]}>
+                <Text style={{fontSize:20}}>No hay Productos en el Carrito</Text>
+            </View>
+        </View>
+        )
+    }
     
   return (
     <View style={[styles.container, !portrait && styles.containerLandScape]}>
@@ -51,7 +62,7 @@ export default Cart
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        justifyContent:"space-between"
+        justifyContent:'space-between'
     },
     containerLandScape:{
         flexDirection: 'row',
@@ -62,7 +73,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         bottom: 35,
-        right: 35
+        right: 35,
+        
     },
     confirmContainer:{
         flexDirection:"row",
@@ -104,4 +116,15 @@ const styles = StyleSheet.create({
     flatListLandScape: {
         width: '65%',
     },
+    containerText:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        top: '45%'
+    },
+    containerTextLandScape:{
+        top: '0%',
+        bottom: 5,
+        justifyContent:'center',
+        alignItems: 'center',
+    }
 })

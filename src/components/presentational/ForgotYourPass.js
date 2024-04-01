@@ -51,10 +51,6 @@ const styles = StyleSheet.create({
     alignItems:"center",
     paddingVertical:20
   },
-  sub:{
-    fontSize:14,
-    fontFamily:fonts.JosefinSansBold
-  },
   subLink:{
     fontSize:14,
     fontFamily:fonts.JosefinSansBold,

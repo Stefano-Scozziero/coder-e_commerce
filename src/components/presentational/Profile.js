@@ -7,12 +7,14 @@ import DeleteButton from './DeleteButton'
 import { useDispatch, useSelector } from "react-redux"
 import { clearUser } from "../../features/auth/authSlice"
 import { deleteSession } from "../../utils/db"
+import LoadingSpinner from './LoadingSpinner'
+import Error from './Error'
 
 
 const Profile = ({navigation}) => {
 
   const localId = useSelector((state) => state.auth.localId)
-  const {data} = useGetImageQuery(localId)
+  const {data: profile, isError, isLoading} = useGetImageQuery(localId)
   const portrait = useContext(OrientationContext)
   const dispatch = useDispatch()
   const idToken = useSelector((state) => state.auth.idToken)
@@ -22,11 +24,14 @@ const Profile = ({navigation}) => {
       deleteSession()
   }
 
+  if(isLoading) return <LoadingSpinner/>
+  if(isError) return <Error message="¡Ups! Algo salió mal." textButton="Volver" onRetry={()=>navigation.goBack()}/>
+
   return (
     <View style={[styles.main, !portrait && styles.mainLandScape]}>
         <View style={[styles.container, !portrait && styles.containerLandScape]}>
             <Image
-                source={data ? {uri:data.image}:require("../../../assets/usuario.png")}
+                source={profile?.image ? {uri:profile?.image}:require("../../../assets/usuario.png")}
                 style={[styles.image, !portrait && styles.imageLandScape]}
                 resizeMode='cover'
             />

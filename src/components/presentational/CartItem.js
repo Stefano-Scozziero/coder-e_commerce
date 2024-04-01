@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     containerImage:{
         flexDirection: 'row',
         alignItems: 'center',
-        right: 15
     },
     image: {
         minWidth: 80,

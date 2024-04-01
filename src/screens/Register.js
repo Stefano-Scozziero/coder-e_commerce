@@ -27,6 +27,7 @@ const Register = ({navigation}) => {
     setModalVisible(false)
   }
 
+
   const onSubmit = async () => {
     try {
       registerSchema.validateSync({email,password,confirmPassword})
@@ -60,6 +61,7 @@ const Register = ({navigation}) => {
 
   }
 
+
   return (
     <>
     
@@ -74,13 +76,13 @@ const Register = ({navigation}) => {
           isSecure={false}
           error={errorEmail}
         />
-        <InputForm
-          label="Password"
-          value={password}
-          onChangeText={(t) => setPassword(t)}
-          isSecure={true}
-          error = {errorPassword}
-        />
+          <InputForm
+            label="Password"
+            value={password}
+            onChangeText={(t) => setPassword(t)}
+            isSecure={true}
+            error = {errorPassword}
+          />
         <InputForm
           label="Confirmar Password"
           value={confirmPassword}
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
-      paddingVertical:20
+      paddingVertical:20,
     },
     title:{
       fontFamily:fonts.russoOne,
