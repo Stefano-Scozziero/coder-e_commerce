@@ -1,4 +1,4 @@
-import { StyleSheet, View, Button,Text, Pressable } from 'react-native'
+import { StyleSheet, View, Alert,Text, Pressable } from 'react-native'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addCartItem } from '../../features/cart/cartSlice'
@@ -12,6 +12,7 @@ const Counter = ({navigation,initialValue, textButton, product}) => {
     const handlerAddCartItem = (quantity) => {
       dispatch(addCartItem({...product,quantity}))
       setCount(1)
+      Alert.alert("Se agrego el producto al carrito")
       navigation.navigate("CartStack")
     }
 

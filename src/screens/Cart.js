@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, Pressable, ImageBackground } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Pressable, Alert } from 'react-native'
 import CartItem from '../components/presentational/CartItem'
 import fonts from '../utils/globals/fonts'
 import colors from '../utils/globals/colors'
@@ -24,6 +24,7 @@ const Cart = ({navigation}) => {
         }
          await triggerAddOrder({localId,order})
          dispatch(deleteCart())
+         Alert.alert("Se confirmaron los productos")
          navigation.navigate("OrdersStack")
     }
 
